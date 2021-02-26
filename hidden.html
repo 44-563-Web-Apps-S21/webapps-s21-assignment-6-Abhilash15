@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Web apps Assignment 6
+        </title>
+    </head>
+ 
+<body>
+
+<h2>Hidden thingsby Abhilash</h2>
+
+<form>
+    <label for="label_secret">Enter the secret word </label>
+    <input type ="password" id="input_secret" name="input_secret" min=10 max=50 step=2 value="secret"> <br>
+
+    <label for="label_guess">Enter the guess </label>
+    <input type ="text" id="input_guess" name="input_guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">Check the results </p>
+
+<script> 
+var correct = 0;
+var wrong = 0;
+
+function processGuess(){
+    console.log("Getting form values")
+    secret = document.getElementById("input_secret").value
+    guess = document.getElementById("input_guess").value
+    
+
+    if(secret==guess){
+       correct++;
+       alert("Congratulations");
+    } else {
+        wrong++;
+        alert("Sorry");
+    }
+    document.getElementById("result").innerHTML = "Correct " + correct + " Wrong " + wrong;
+}
+</script>
+
+</body>
+</html> 
