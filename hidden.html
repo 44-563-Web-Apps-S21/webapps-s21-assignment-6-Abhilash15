@@ -22,7 +22,9 @@
 
 
 <p id="result">Check the results </p>
-
+<div id="container">
+    <img id="image" onclick = rotateImage() src="control-bamboo.jpg" width="200" height="200">
+</div>
 <script> 
 var correct = 0;
 var wrong = 0;
@@ -43,6 +45,26 @@ function processGuess(){
     document.getElementById("result").innerHTML = "Correct " + correct + " Wrong " + wrong;
 }
 </script>
-
+<script>
+    var currentImage = 0;
+    function rotateImage(){
+        switch(currentImage){
+            case 0:
+                document.getElementById("image").src = "control-bamboo.jpg";
+                currentImage += 1;
+                
+                break;
+            case 1:
+                document.getElementById("image").src = "funshine_abelia_landscape.jpg";
+                currentImage += 1;
+                break;
+            case 2:
+                document.getElementById("image").src = "turmeric-square-steven-foster.jpg";
+                currentImage = 0;
+                break;
+            
+        }
+    }
+</script>
 </body>
 </html> 
